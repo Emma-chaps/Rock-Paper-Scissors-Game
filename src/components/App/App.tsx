@@ -1,18 +1,22 @@
 import React from "react";
-import styled from "styled-components";
+import styled, { ThemeProvider } from "styled-components";
 import Header from "../Header";
+import { myTheme } from "./../../styles/myTheme";
+
 import "./App.css";
 
 const Wrapper = styled.div`
   padding: 1.5rem;
-  background: radial-gradient(hsl(214, 47%, 23%) hsl(237, 49%, 15%));
+  background: ${(props) => props.theme.gradients.background};
 `;
 
 function App() {
   return (
-    <Wrapper>
-      <Header />
-    </Wrapper>
+    <ThemeProvider theme={myTheme}>
+      <Wrapper>
+        <Header />
+      </Wrapper>
+    </ThemeProvider>
   );
 }
 

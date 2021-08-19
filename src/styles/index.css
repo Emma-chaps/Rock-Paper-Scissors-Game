@@ -3,12 +3,14 @@
 body {
   margin: 0;
   font-family: "Barlow Semi Condensed", sans-serif;
-  /* -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale; */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
   height: 100vh;
   width: 100vw;
   background: radial-gradient(hsl(214, 47%, 23%), hsl(237, 49%, 15%));
 }
 
-.lol {
+h6 {
+  text-transform: uppercase;
+  align-content: space-around;
 }
