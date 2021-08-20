@@ -8,12 +8,16 @@ import triangle from "./../../images/bg-triangle.svg";
 
 const StyledGameWrapper = styled.main`
   position: relative;
-  margin: 2rem 0;
+  display: grid;
+  grid-template-columns: 110px 110px 110px;
+  grid-template-rows: 110px 70px 110px;
+  margin: 2rem auto;
+  justify-content: center;
 `;
 
 const ExternalCircle = styled.div`
-  height: 115px;
-  width: 115px;
+  height: 110px;
+  width: 110x;
   border-radius: 50%;
   display: flex;
   flex-direction: column;
@@ -23,8 +27,8 @@ const ExternalCircle = styled.div`
 `;
 
 const InternalCircle = styled.div`
-  height: 85px;
-  width: 85px;
+  height: 80px;
+  width: 80px;
   background-color: white;
   border-radius: 50%;
   margin: auto;
@@ -34,27 +38,32 @@ const InternalCircle = styled.div`
 
 const Img = styled.img`
   height: 2.7rem;
-  padding-top: 1.5rem;
+  padding-top: 1.3rem;
 `;
 
 const PaperExternalCircle = styled(ExternalCircle)`
-  position: absolute;
-  top: 0;
-  left: 0;
+  grid-column-start: 1;
+  grid-column-end: 2;
+  grid-row-start: 1;
+  grid-row-end: 2;
   background: ${(props) => props.theme.gradients.paperGradient};
 `;
 
-const RockExternalCircle = styled(ExternalCircle)`
-  position: absolute;
-  top: 50px;
-  background: ${(props) => props.theme.gradients.rockGradient};
+const ScissorsExternalCircle = styled(ExternalCircle)`
+  grid-column-start: 3;
+  grid-column-end: 4;
+  grid-row-start: 1;
+  grid-row-end: 2;
+
+  background: ${(props) => props.theme.gradients.scissorsGradient};
 `;
 
-const ScissorsExternalCircle = styled(ExternalCircle)`
-  right: 0;
-  position: absolute;
-  top: 0;
-  background: ${(props) => props.theme.gradients.scissorsGradient};
+const RockExternalCircle = styled(ExternalCircle)`
+  grid-column-start: 2;
+  grid-column-end: 3;
+  grid-row-start: 3;
+  grid-row-end: 4;
+  background: ${(props) => props.theme.gradients.rockGradient};
 `;
 
 const Triangle = styled.img`
@@ -64,6 +73,10 @@ const Triangle = styled.img`
   display: block;
   margin-left: auto;
   margin-right: auto;
+  grid-column-start: 1;
+  grid-column-end: 4;
+  grid-row-start: 1;
+  grid-row-end: 4;
 `;
 
 const Game = () => {
