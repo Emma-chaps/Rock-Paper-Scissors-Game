@@ -1,6 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-// import { myTheme } from "../../my-theme";
 import logo from "./../../images/logo.svg";
 
 const StyledHeader = styled.header`

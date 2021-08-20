@@ -2,6 +2,7 @@ import React from "react";
 import styled, { ThemeProvider } from "styled-components";
 import Game from "../Game";
 import Header from "../Header";
+import Rules from "../Rules";
 import { myTheme } from "./../../styles/myTheme";
 
 import "./App.css";
@@ -17,6 +18,7 @@ function App() {
       <Wrapper>
         <Header />
         <Game />
+        <Rules />
       </Wrapper>
     </ThemeProvider>
   );

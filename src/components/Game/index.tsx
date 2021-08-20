@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { IARandomChoice } from "./../../hooks/utils";
 
 import paper from "./../../images/icon-paper.svg";
 import rock from "./../../images/icon-rock.svg";
@@ -11,8 +12,8 @@ const StyledGameWrapper = styled.main`
   display: grid;
   grid-template-columns: 110px 110px 110px;
   grid-template-rows: 110px 70px 110px;
-  margin: 2rem auto;
   justify-content: center;
+  margin: 4rem auto;
 `;
 
 const ExternalCircle = styled.div`
@@ -54,7 +55,6 @@ const ScissorsExternalCircle = styled(ExternalCircle)`
   grid-column-end: 4;
   grid-row-start: 1;
   grid-row-end: 2;
-
   background: ${(props) => props.theme.gradients.scissorsGradient};
 `;
 
@@ -79,22 +79,32 @@ const Triangle = styled.img`
   grid-row-end: 4;
 `;
 
+const data = ["paper", "rock", "scissors"];
+
 const Game = () => {
+  const userSelection = (event: any) => {
+    ///// Type à corriger
+    const userChoice = event.target.id;
+    ///// Type à corriger
+    console.log(userChoice);
+    IARandomChoice(data, userChoice);
+  };
+
   return (
     <StyledGameWrapper>
-      <PaperExternalCircle>
-        <InternalCircle>
-          <Img src={paper} alt='paper' />
+      <PaperExternalCircle onClick={userSelection} id='paper'>
+        <InternalCircle id='paper'>
+          <Img src={paper} alt='paper' id='paper' />
         </InternalCircle>
       </PaperExternalCircle>
-      <RockExternalCircle>
-        <InternalCircle>
-          <Img src={rock} alt='rock' />
+      <RockExternalCircle onClick={userSelection} id='rock'>
+        <InternalCircle id='rock'>
+          <Img src={rock} alt='rock' id='rock' />
         </InternalCircle>
       </RockExternalCircle>
-      <ScissorsExternalCircle>
-        <InternalCircle>
-          <Img src={scissors} alt='scissors' />
+      <ScissorsExternalCircle onClick={userSelection} id='scissors'>
+        <InternalCircle id='scissors'>
+          <Img src={scissors} alt='scissors' id='scissors' />
         </InternalCircle>
       </ScissorsExternalCircle>
       <Triangle src={triangle} alt='triangle' />
