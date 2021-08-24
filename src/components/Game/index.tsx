@@ -1,4 +1,4 @@
-import React from "react";
+import React, { MouseEvent } from "react";
 import styled from "styled-components";
 import { IARandomChoice } from "./../../hooks/utils";
 
@@ -82,10 +82,8 @@ const Triangle = styled.img`
 const data = ["paper", "rock", "scissors"];
 
 const Game = () => {
-  const userSelection = (event: any) => {
-    ///// Type à corriger
-    const userChoice = event.target.id;
-    ///// Type à corriger
+  const userSelection = (event: MouseEvent) => {
+    const userChoice = event.currentTarget.id;
     console.log(userChoice);
     IARandomChoice(data, userChoice);
   };
