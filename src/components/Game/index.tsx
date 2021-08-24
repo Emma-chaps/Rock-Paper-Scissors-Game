@@ -1,6 +1,5 @@
 import React, { MouseEvent } from "react";
 import styled from "styled-components";
-import { IARandomChoice } from "./../../hooks/utils";
 
 import paper from "./../../images/icon-paper.svg";
 import rock from "./../../images/icon-rock.svg";
@@ -79,28 +78,24 @@ const Triangle = styled.img`
   grid-row-end: 4;
 `;
 
-const data = ["paper", "rock", "scissors"];
+type AppProps = {
+  startGame: (event: MouseEvent) => void;
+};
 
-const Game = () => {
-  const userSelection = (event: MouseEvent) => {
-    const userChoice = event.currentTarget.id;
-    console.log(userChoice);
-    IARandomChoice(data, userChoice);
-  };
-
+const Game = ({ startGame }: AppProps) => {
   return (
     <StyledGameWrapper>
-      <PaperExternalCircle onClick={userSelection} id='paper'>
+      <PaperExternalCircle onClick={startGame} id='paper'>
         <InternalCircle id='paper'>
           <Img src={paper} alt='paper' id='paper' />
         </InternalCircle>
       </PaperExternalCircle>
-      <RockExternalCircle onClick={userSelection} id='rock'>
+      <RockExternalCircle onClick={startGame} id='rock'>
         <InternalCircle id='rock'>
           <Img src={rock} alt='rock' id='rock' />
         </InternalCircle>
       </RockExternalCircle>
-      <ScissorsExternalCircle onClick={userSelection} id='scissors'>
+      <ScissorsExternalCircle onClick={startGame} id='scissors'>
         <InternalCircle id='scissors'>
           <Img src={scissors} alt='scissors' id='scissors' />
         </InternalCircle>
