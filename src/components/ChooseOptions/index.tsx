@@ -82,7 +82,7 @@ type AppProps = {
   startGame: (event: MouseEvent) => void;
 };
 
-const Game = ({ startGame }: AppProps) => {
+const ChooseOptions = ({ startGame }: AppProps) => {
   return (
     <StyledGameWrapper>
       <PaperExternalCircle onClick={startGame} id='paper'>
@@ -105,4 +105,4 @@ const Game = ({ startGame }: AppProps) => {
   );
 };
 
-export default Game;
+export default ChooseOptions;

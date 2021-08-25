@@ -42,25 +42,18 @@ const PNbScore = styled.p`
   color: ${(props) => props.theme.colors.darkText};
 `;
 
-const Header = () => {
+type AppProps = {
+  counter: number;
+};
+
+const Header = ({ counter }: AppProps) => {
   return (
     <StyledHeader className='App-header'>
       <Image src={logo} className='App-logo' alt='logo' />
       <Wrapper>
         <PTitleScore>score</PTitleScore>
-        <PNbScore>1</PNbScore>
+        <PNbScore>{counter}</PNbScore>
       </Wrapper>
-      {/*<p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className='App-link'
-          href='https://reactjs.org'
-          target='_blank'
-          rel='noopener noreferrer'
-        >
-          Learn React
-        </a> */}
     </StyledHeader>
   );
 };
