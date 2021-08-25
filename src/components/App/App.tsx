@@ -23,14 +23,14 @@ function App() {
   const [isUserWinning, setIsUserWinning] = useState(false);
   const [counter, setCounter] = useState(0);
 
-  const startGame = (id: string) => {
-    setUserSelection(id);
-    const ia = IARandomChoice(data, id);
-    const result = theWinnerIs(id, ia);
-    setIaSelection(ia);
-    setIsUserWinning(result);
+  const startGame = (userChoice: string) => {
+    setUserSelection(userChoice);
+    const iaChoice = IARandomChoice(data, userChoice);
+    const userWin = theWinnerIs(userChoice, iaChoice);
+    setIaSelection(iaChoice);
+    setIsUserWinning(userWin);
     sethasGameStarted(true);
-    if (result) {
+    if (userWin) {
       setCounter(counter + 1);
     } else {
       setCounter(counter - 1);
