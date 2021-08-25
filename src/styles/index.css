@@ -13,6 +13,7 @@ body {
 }
 
 h6 {
-  text-transform: uppercase;
-  align-content: space-around;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
 }
