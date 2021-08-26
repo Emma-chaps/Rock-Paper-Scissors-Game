@@ -37,10 +37,6 @@ function App() {
     }
   };
 
-  const replayGame = () => {
-    sethasGameStarted(false);
-  };
-
   return (
     <ThemeProvider theme={myTheme}>
       <Wrapper>
@@ -50,7 +46,7 @@ function App() {
             userSelection={userSelection}
             iaSelection={iaSelection}
             isUserWinning={isUserWinning}
-            replay={replayGame}
+            replay={() => sethasGameStarted(false)}
           />
         ) : (
           <ChooseOptions
