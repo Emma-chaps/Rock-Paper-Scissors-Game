@@ -87,7 +87,7 @@ const ChooseOptions = ({ startGame }: AppProps) => {
     <StyledGameWrapper>
       <PaperExternalCircle onClick={startGame} id='paper'>
         <InternalCircle id='paper'>
-          <Img src='./../../images/icon-paper.svg' alt='paper' id='paper' />
+          <Img src='/images/icon-paper.svg' alt='paper' id='paper' />
         </InternalCircle>
       </PaperExternalCircle>
       <RockExternalCircle onClick={startGame} id='rock'>
