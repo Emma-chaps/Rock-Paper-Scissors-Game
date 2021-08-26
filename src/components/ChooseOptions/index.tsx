@@ -1,6 +1,6 @@
 import React, { MouseEvent } from "react";
 import styled from "styled-components";
-
+import data from "./../../data";
 import triangle from "./../../images/bg-triangle.svg";
 
 const StyledGameWrapper = styled.main`
@@ -16,7 +16,12 @@ const StyledGameWrapper = styled.main`
   margin: 4rem auto;
 `;
 
-const ExternalCircle = styled.div`
+type ContainerType = {
+  optionName: string;
+  color: string;
+};
+
+const ExternalCircle = styled.div<ContainerType>`
   height: 110px;
   width: 110x;
   border-radius: 50%;
@@ -25,6 +30,8 @@ const ExternalCircle = styled.div`
   justify-content: space-around;
   text-align: center;
   box-shadow: inset -2px -10px 2px 2px rgb(0 0 0 / 25%);
+  grid-area: ${(props: ContainerType) => props.optionName};
+  background: ${(props: ContainerType) => props.color};
 `;
 
 const InternalCircle = styled.div`
@@ -40,22 +47,6 @@ const InternalCircle = styled.div`
 const Img = styled.img`
   height: 2.7rem;
   padding-top: 1.3rem;
-`;
-
-const PaperExternalCircle = styled(ExternalCircle)`
-  grid-area: paper;
-  background: ${(props) => props.theme.gradients.paperGradient};
-`;
-
-const ScissorsExternalCircle = styled(ExternalCircle)`
-  grid-area: scissors;
-
-  background: ${(props) => props.theme.gradients.scissorsGradient};
-`;
-
-const RockExternalCircle = styled(ExternalCircle)`
-  grid-area: rock;
-  background: ${(props) => props.theme.gradients.rockGradient};
 `;
 
 const Triangle = styled.img`
@@ -76,21 +67,23 @@ type AppProps = {
 const ChooseOptions = ({ startGame }: AppProps) => {
   return (
     <StyledGameWrapper>
-      <PaperExternalCircle onClick={startGame} id='paper'>
-        <InternalCircle id='paper'>
-          <Img src='/images/icon-paper.svg' alt='paper' id='paper' />
-        </InternalCircle>
-      </PaperExternalCircle>
-      <RockExternalCircle onClick={startGame} id='rock'>
-        <InternalCircle id='rock'>
-          <Img src='/images/icon-rock.svg' alt='rock' id='rock' />
-        </InternalCircle>
-      </RockExternalCircle>
-      <ScissorsExternalCircle onClick={startGame} id='scissors'>
-        <InternalCircle id='scissors'>
-          <Img src='/images/icon-scissors.svg' alt='scissors' id='scissors' />
-        </InternalCircle>
-      </ScissorsExternalCircle>
+      {data.map((option) => (
+        <ExternalCircle
+          onClick={startGame}
+          id={option.name}
+          optionName={option.name}
+          color={option.color}
+        >
+          <InternalCircle id={option.name}>
+            <Img
+              src={`/images/icon-${option.name}.svg`}
+              alt={`${option.name}`}
+              id={option.name}
+            />
+          </InternalCircle>
+        </ExternalCircle>
+      ))}
+
       <Triangle src={triangle} alt='triangle' />
     </StyledGameWrapper>
   );

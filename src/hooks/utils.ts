@@ -8,36 +8,36 @@ export const IARandomChoice = (array: string[], element: string) => {
 };
 
 export const theWinnerIs = (userSelection: string, iaSelection: string) => {
-  console.log("user", userSelection);
-
-  console.log("ia", iaSelection);
-
   if (userSelection === "rock") {
     if (iaSelection === "paper") {
-      console.log("1");
-
       return false;
     }
-    console.log("2");
-
     return true;
   }
   if (userSelection === "paper") {
     if (iaSelection === "rock") {
-      console.log("3");
-
       return true;
     }
-    console.log("4");
-
     return false;
   }
   if (iaSelection === "paper") {
-    console.log("5");
-
     return true;
   }
-  console.log("6");
-
   return false;
+};
+
+export const findSelectionData = (
+  data: { name: string; color: string }[],
+  option: string
+) => {
+  const defaultValue = {
+    name: "paper",
+    color: "radial-gradient(hsl(230, 89%, 62%), hsl(230, 89%, 65%))",
+  };
+  const found = data.find((item) => item.name === option);
+  if (found && found.name && found.color) {
+    return found;
+  }
+
+  return defaultValue;
 };
