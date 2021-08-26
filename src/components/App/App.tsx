@@ -33,7 +33,9 @@ function App() {
     if (userWin) {
       setCounter(counter + 1);
     } else {
-      setCounter(counter - 1);
+      if (counter > 0) {
+        setCounter(counter - 1);
+      }
     }
   };
 
