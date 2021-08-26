@@ -64,11 +64,11 @@ const Result = ({
       <OptionsWrapper>
         <ChoicerWrapper>
           {userSelection}
-          <img src='' alt='' />
+          <img src={`/images/icon-${userSelection}.svg`} alt={userSelection} />
           <ChoicerTitle>You picked</ChoicerTitle>
         </ChoicerWrapper>
         <ChoicerWrapper>
-          <img src='' alt='' />
+          <img src={`/images/icon-${iaSelection}.svg`} alt={iaSelection} />
           {iaSelection}
           <ChoicerTitle>The house Picked</ChoicerTitle>
         </ChoicerWrapper>

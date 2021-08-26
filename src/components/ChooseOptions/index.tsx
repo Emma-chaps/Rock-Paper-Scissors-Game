@@ -1,9 +1,6 @@
 import React, { MouseEvent } from "react";
 import styled from "styled-components";
 
-// import paper from "./../../images/icon-paper.svg";
-import rock from "./../../images/icon-rock.svg";
-import scissors from "./../../images/icon-scissors.svg";
 import triangle from "./../../images/bg-triangle.svg";
 
 const StyledGameWrapper = styled.main`
@@ -11,6 +8,10 @@ const StyledGameWrapper = styled.main`
   display: grid;
   grid-template-columns: 110px 110px 110px;
   grid-template-rows: 110px 70px 110px;
+  grid-template-areas:
+    "paper . scissors"
+    ". . ."
+    ". rock .";
   justify-content: center;
   margin: 4rem auto;
 `;
@@ -42,26 +43,18 @@ const Img = styled.img`
 `;
 
 const PaperExternalCircle = styled(ExternalCircle)`
-  grid-column-start: 1;
-  grid-column-end: 2;
-  grid-row-start: 1;
-  grid-row-end: 2;
+  grid-area: paper;
   background: ${(props) => props.theme.gradients.paperGradient};
 `;
 
 const ScissorsExternalCircle = styled(ExternalCircle)`
-  grid-column-start: 3;
-  grid-column-end: 4;
-  grid-row-start: 1;
-  grid-row-end: 2;
+  grid-area: scissors;
+
   background: ${(props) => props.theme.gradients.scissorsGradient};
 `;
 
 const RockExternalCircle = styled(ExternalCircle)`
-  grid-column-start: 2;
-  grid-column-end: 3;
-  grid-row-start: 3;
-  grid-row-end: 4;
+  grid-area: rock;
   background: ${(props) => props.theme.gradients.rockGradient};
 `;
 
@@ -72,10 +65,8 @@ const Triangle = styled.img`
   display: block;
   margin-left: auto;
   margin-right: auto;
-  grid-column-start: 1;
-  grid-column-end: 4;
-  grid-row-start: 1;
-  grid-row-end: 4;
+  grid-column: 1 / 4;
+  grid-row: 1 / 4;
 `;
 
 type AppProps = {
@@ -92,12 +83,12 @@ const ChooseOptions = ({ startGame }: AppProps) => {
       </PaperExternalCircle>
       <RockExternalCircle onClick={startGame} id='rock'>
         <InternalCircle id='rock'>
-          <Img src={rock} alt='rock' id='rock' />
+          <Img src='/images/icon-rock.svg' alt='rock' id='rock' />
         </InternalCircle>
       </RockExternalCircle>
       <ScissorsExternalCircle onClick={startGame} id='scissors'>
         <InternalCircle id='scissors'>
-          <Img src={scissors} alt='scissors' id='scissors' />
+          <Img src='/images/icon-scissors.svg' alt='scissors' id='scissors' />
         </InternalCircle>
       </ScissorsExternalCircle>
       <Triangle src={triangle} alt='triangle' />
