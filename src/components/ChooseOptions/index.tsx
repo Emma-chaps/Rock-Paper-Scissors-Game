@@ -1,7 +1,7 @@
 import React, { MouseEvent } from "react";
 import styled from "styled-components";
 
-import paper from "./../../images/icon-paper.svg";
+// import paper from "./../../images/icon-paper.svg";
 import rock from "./../../images/icon-rock.svg";
 import scissors from "./../../images/icon-scissors.svg";
 import triangle from "./../../images/bg-triangle.svg";
