@@ -1,5 +1,10 @@
 import React from "react";
 import styled from "styled-components";
+import {
+  ExternalCircle,
+  InternalCircle,
+  Img,
+} from "./../../styles/styledComponents";
 import { findSelectionData } from "./../../hooks/utils";
 import data from "./../../data";
 
@@ -47,39 +52,6 @@ const Button = styled.button`
   font-weight: bold;
   font-size: 0.9em;
   letter-spacing: 2px;
-`;
-
-type ContainerType = {
-  optionName: string;
-  color: string;
-};
-
-const ExternalCircle = styled.div<ContainerType>`
-  height: 110px;
-  width: 110x;
-  border-radius: 50%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  text-align: center;
-  box-shadow: inset -2px -10px 2px 2px rgb(0 0 0 / 25%);
-  grid-area: ${(props: ContainerType) => props.optionName};
-  background: ${(props: ContainerType) => props.color};
-`;
-
-const InternalCircle = styled.div`
-  height: 80px;
-  width: 80px;
-  background-color: white;
-  border-radius: 50%;
-  margin: auto;
-  vertical-align: middle;
-  box-shadow: inset 0 5px 2px 2px rgb(0 0 0 / 25%);
-`;
-
-const Img = styled.img`
-  height: 2.7rem;
-  padding-top: 1.3rem;
 `;
 
 type AppProps = {
