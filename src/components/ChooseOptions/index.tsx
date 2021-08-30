@@ -18,7 +18,7 @@ const StyledGameWrapper = styled.main`
     ". . ."
     ". rock .";
   justify-content: center;
-  margin: 4rem auto;
+  margin: 3rem auto;
   @media (min-width: 700px) {
     grid-template-columns: 130px 130px 130px;
     grid-template-rows: 130px 90px 130px;

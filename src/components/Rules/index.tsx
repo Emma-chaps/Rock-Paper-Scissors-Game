@@ -44,7 +44,7 @@ const RulesModal = styled.div`
     min-width: 50vw;
     max-width: 50vw;
   }
-  @media (min-width: 1000px) {
+  @media (min-width: 1050px) {
     right: 35vw;
     left: 35vw;
     min-width: 30vw;
