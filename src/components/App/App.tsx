@@ -8,8 +8,8 @@ import { IARandomChoice, theWinnerIs } from "./../../hooks/utils";
 import { myTheme } from "./../../styles/myTheme";
 
 const Wrapper = styled.div`
-  padding: 1.5rem;
-  max-width: 1000px;
+  padding: 1rem 1.5rem;
+  max-width: 800px;
   margin: 0 auto;
   background: ${(props) => props.theme.gradients.bodyBackground};
 `;

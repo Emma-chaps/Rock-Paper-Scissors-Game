@@ -12,7 +12,7 @@ const StyledResultWrapper = styled.div`
   text-align: center;
   margin: 2.6rem auto;
   min-height: 303px;
-  @media (min-width: 700px) {
+  @media (min-width: 700px) AND (min-height: 700px) {
     min-height: 350px;
     margin: 3.5rem auto 2.5rem;
   }
@@ -23,7 +23,7 @@ const OptionsWrapper = styled.div`
   grid-template-columns: 110px 110px;
   column-gap: 90px;
   justify-content: center;
-  @media (min-width: 700px) {
+  @media (min-width: 700px) AND (min-height: 700px) {
     grid-template-columns: 130px 130px;
   }
 `;

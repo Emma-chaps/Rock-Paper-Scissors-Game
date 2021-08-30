@@ -3,7 +3,7 @@ import styled from "styled-components";
 import logo from "./../../images/logo.svg";
 
 const StyledHeader = styled.header`
-  padding: 0.9rem;
+  padding: 0.7rem;
   border: 3px solid ${(props) => props.theme.colors.headerOutline};
   border-radius: ${(props) => props.theme.borderRadius};
   display: flex;
@@ -13,7 +13,7 @@ const StyledHeader = styled.header`
 `;
 
 const Image = styled.img`
-  height: 12vh;
+  height: 11vh;
   max-height: 100px;
   padding: 0.3rem 0;
   @media (min-width: 800px) AND (min-height: 700px) {
@@ -26,8 +26,8 @@ const Wrapper = styled.div`
   flex-direction: column;
   text-align: center;
   justify-content: space-around;
-  height: 4.3rem;
-  width: 5rem;
+  height: 3.3rem;
+  width: 4.3rem;
   background-color: white;
   padding: 0.7rem 0.5rem;
   border-radius: ${(props) => props.theme.borderRadius};
@@ -38,7 +38,7 @@ const Wrapper = styled.div`
 `;
 
 const PTitleScore = styled.p`
-  font-size: 1em;
+  font-size: 0.8em;
   font-weight: bold;
   letter-spacing: 1px;
   text-transform: uppercase;
@@ -49,7 +49,7 @@ const PTitleScore = styled.p`
 `;
 
 const PNbScore = styled.p`
-  font-size: 3.5em;
+  font-size: 2.8em;
   font-weight: bold;
   color: ${(props) => props.theme.colors.darkText};
   @media (min-width: 800px) AND (min-height: 700px) {

@@ -41,7 +41,7 @@ export const ExternalCircle = styled.div<CircleType>`
   animation: ${(props: CircleType) => (props.rotate ? rotate : "none")} 1s
     backwards;
   cursor: ${(props: CircleType) => (props.cursor ? "pointer" : "auto")};
-  @media (min-width: 700px) {
+  @media (min-width: 700px) AND (min-height: 700px) {
     height: 130px;
     width: 130px;
   }
@@ -56,7 +56,7 @@ export const InternalCircle = styled.div<CursorType>`
   vertical-align: middle;
   box-shadow: inset 0 5px 2px 2px rgb(0 0 0 / 25%);
   cursor: ${(props: CursorType) => (props.cursor ? "pointer" : "auto")};
-  @media (min-width: 700px) {
+  @media (min-width: 700px) AND (min-height: 700px) {
     height: 100px;
     width: 100px;
   }
@@ -66,7 +66,7 @@ export const Img = styled.img<CursorType>`
   height: 40px;
   padding-top: 1.3rem;
   cursor: ${(props: CursorType) => (props.cursor ? "pointer" : "auto")};
-  @media (min-width: 700px) {
+  @media (min-width: 700px) AND (min-height: 700px) {
     height: 50px;
     padding-top: 1.6rem;
   }
