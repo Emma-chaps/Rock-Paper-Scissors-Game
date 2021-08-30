@@ -1,5 +1,6 @@
 import React, { useState, MouseEvent } from "react";
 import styled, { ThemeProvider } from "styled-components";
+import data from "./../../data";
 import ChooseOptions from "../ChooseOptions";
 import Header from "../Header";
 import Result from "../Result";
@@ -14,7 +15,7 @@ const Wrapper = styled.div`
   background: ${(props) => props.theme.gradients.bodyBackground};
 `;
 
-const data = ["paper", "rock", "scissors"];
+// const data = ["paper", "rock", "scissors"];
 
 function App() {
   const [userSelection, setUserSelection] = useState("");

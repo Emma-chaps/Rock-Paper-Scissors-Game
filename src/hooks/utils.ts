@@ -1,7 +1,12 @@
-export const IARandomChoice = (array: string[], element: string) => {
-  const newArray = array.filter((item: string) => item !== element);
+export const IARandomChoice = (
+  array: { name: string; color: string }[],
+  element: string
+) => {
+  const newArray = array.filter(
+    (item: { name: string; color: string }) => item.name !== element
+  );
   const result = newArray[Math.floor(Math.random() * newArray.length)];
-  return result;
+  return result.name;
 };
 
 export const theWinnerIs = (userSelection: string, iaSelection: string) => {
