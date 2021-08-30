@@ -3,6 +3,11 @@ import styled, { keyframes } from "styled-components";
 type CircleType = {
   selectedOption: { name: string; color: string };
   rotate?: string;
+  cursor?: string;
+};
+
+type CursorType = {
+  cursor?: string;
 };
 
 /*------------------------
@@ -35,13 +40,14 @@ export const ExternalCircle = styled.div<CircleType>`
   background: ${(props: CircleType) => props.selectedOption.color};
   animation: ${(props: CircleType) => (props.rotate ? rotate : "none")} 1s
     backwards;
+  cursor: ${(props: CircleType) => (props.cursor ? "pointer" : "auto")};
   @media (min-width: 700px) {
     height: 130px;
     width: 130px;
   }
 `;
 
-export const InternalCircle = styled.div`
+export const InternalCircle = styled.div<CursorType>`
   height: 80px;
   width: 80px;
   background-color: white;
@@ -49,15 +55,17 @@ export const InternalCircle = styled.div`
   margin: auto;
   vertical-align: middle;
   box-shadow: inset 0 5px 2px 2px rgb(0 0 0 / 25%);
+  cursor: ${(props: CursorType) => (props.cursor ? "pointer" : "auto")};
   @media (min-width: 700px) {
     height: 100px;
     width: 100px;
   }
 `;
 
-export const Img = styled.img`
+export const Img = styled.img<CursorType>`
   height: 40px;
   padding-top: 1.3rem;
+  cursor: ${(props: CursorType) => (props.cursor ? "pointer" : "auto")};
   @media (min-width: 700px) {
     height: 50px;
     padding-top: 1.6rem;

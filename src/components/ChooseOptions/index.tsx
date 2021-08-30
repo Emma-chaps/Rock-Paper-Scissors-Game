@@ -49,12 +49,14 @@ const ChooseOptions = ({ startGame }: AppProps) => {
           id={option.name}
           selectedOption={option}
           key={option.name}
+          cursor='yes'
         >
-          <InternalCircle id={option.name}>
+          <InternalCircle id={option.name} cursor='yes'>
             <Img
               src={`/images/icon-${option.name}.svg`}
               alt={`${option.name}`}
               id={option.name}
+              cursor='yes'
             />
           </InternalCircle>
         </ExternalCircle>
