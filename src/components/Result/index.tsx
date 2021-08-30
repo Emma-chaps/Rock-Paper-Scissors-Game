@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import {
   ExternalCircle,
@@ -8,9 +8,12 @@ import {
 import { findSelectionData } from "./../../hooks/utils";
 import data from "./../../data";
 
+import "./Result.css";
+
 const StyledResultWrapper = styled.div`
   text-align: center;
   margin: 3rem auto;
+  min-height: 300px;
 `;
 
 const OptionsWrapper = styled.div`
@@ -67,14 +70,19 @@ const Result = ({
   isUserWinning,
   replay,
 }: AppProps) => {
+  const [loading, setLoading] = useState(false);
   const userData = findSelectionData(data, userSelection);
   const iaData = findSelectionData(data, iaSelection);
+
+  useEffect(() => {
+    setTimeout(() => setLoading(true), 1000);
+  }, []);
 
   return (
     <StyledResultWrapper>
       <OptionsWrapper>
         <ChoicerWrapper>
-          <ExternalCircle optionName={userData.name} color={userData?.color}>
+          <ExternalCircle selectedOption={userData}>
             <InternalCircle>
               <Img
                 src={`/images/icon-${userData?.name}.svg`}
@@ -85,7 +93,7 @@ const Result = ({
           <ChoicerTitle>You picked</ChoicerTitle>
         </ChoicerWrapper>
         <ChoicerWrapper>
-          <ExternalCircle optionName={iaData?.name} color={iaData?.color}>
+          <ExternalCircle selectedOption={iaData} rotate='yes'>
             <InternalCircle>
               <Img
                 src={`/images/icon-${iaData?.name}.svg`}
@@ -96,12 +104,17 @@ const Result = ({
           <ChoicerTitle>The house Picked</ChoicerTitle>
         </ChoicerWrapper>
       </OptionsWrapper>
-      {isUserWinning ? (
-        <ResultTitle>You Win</ResultTitle>
-      ) : (
-        <ResultTitle>You lose</ResultTitle>
+      {loading && (
+        <>
+          {isUserWinning ? (
+            <ResultTitle>You Win</ResultTitle>
+          ) : (
+            <ResultTitle>You lose</ResultTitle>
+          )}
+
+          <Button onClick={replay}>Play again</Button>
+        </>
       )}
-      <Button onClick={replay}>Play again</Button>
     </StyledResultWrapper>
   );
 };

@@ -1,9 +1,23 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 
 type CircleType = {
-  optionName: string;
-  color: string;
+  selectedOption: { name: string; color: string };
+  rotate?: string;
 };
+
+/*------------------------
+       Animations
+-------------------------*/
+
+export const rotate = keyframes`
+from {
+  transform: rotateX(0deg);
+}
+
+to {
+  transform: rotateX(359deg);
+}
+`;
 
 /*------------------------
        Game Option's
@@ -17,8 +31,10 @@ export const ExternalCircle = styled.div<CircleType>`
   justify-content: space-around;
   text-align: center;
   box-shadow: inset -2px -10px 2px 2px rgb(0 0 0 / 25%);
-  grid-area: ${(props: CircleType) => props.optionName};
-  background: ${(props: CircleType) => props.color};
+  grid-area: ${(props: CircleType) => props.selectedOption.name};
+  background: ${(props: CircleType) => props.selectedOption.color};
+  animation: ${(props: CircleType) => (props.rotate ? rotate : "none")} 1s
+    backwards;
 `;
 
 export const InternalCircle = styled.div`

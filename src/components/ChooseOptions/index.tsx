@@ -43,8 +43,8 @@ const ChooseOptions = ({ startGame }: AppProps) => {
         <ExternalCircle
           onClick={startGame}
           id={option.name}
-          optionName={option.name}
-          color={option.color}
+          selectedOption={option}
+          key={option.name}
         >
           <InternalCircle id={option.name}>
             <Img
