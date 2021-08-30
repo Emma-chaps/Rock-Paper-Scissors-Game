@@ -8,12 +8,14 @@ import {
 import { findSelectionData } from "./../../hooks/utils";
 import data from "./../../data";
 
-import "./Result.css";
-
 const StyledResultWrapper = styled.div`
   text-align: center;
   margin: 3rem auto;
   min-height: 300px;
+  @media (min-width: 700px) {
+    min-height: 350px;
+    margin: 5rem auto 3rem;
+  }
 `;
 
 const OptionsWrapper = styled.div`
@@ -21,11 +23,14 @@ const OptionsWrapper = styled.div`
   grid-template-columns: 110px 110px;
   column-gap: 90px;
   justify-content: center;
+  @media (min-width: 700px) {
+    grid-template-columns: 130px 130px;
+  }
 `;
 
 const ChoicerWrapper = styled.div`
   // text-align: center;
-  padding: 0 0 3rem 0;
+  padding: 0 0 2rem 0;
 `;
 
 const ChoicerTitle = styled.p`

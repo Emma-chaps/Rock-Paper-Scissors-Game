@@ -9,11 +9,16 @@ const StyledHeader = styled.header`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  align-items: center;
 `;
 
 const Image = styled.img`
   height: 12vh;
+  max-height: 100px;
   padding: 0.3rem 0;
+  @media (min-width: 800px) {
+    height: 16vh;
+  } ;
 `;
 
 const Wrapper = styled.div`
@@ -26,6 +31,10 @@ const Wrapper = styled.div`
   background-color: white;
   padding: 0.7rem 0.5rem;
   border-radius: ${(props) => props.theme.borderRadius};
+  @media (min-width: 800px) {
+    height: 5rem;
+    width: 6rem;
+  }
 `;
 
 const PTitleScore = styled.p`
@@ -34,12 +43,18 @@ const PTitleScore = styled.p`
   letter-spacing: 1px;
   text-transform: uppercase;
   color: ${(props) => props.theme.colors.scoreText};
+  @media (min-width: 800px) {
+    font-size: 1.3em;
+  }
 `;
 
 const PNbScore = styled.p`
   font-size: 3.5em;
   font-weight: bold;
   color: ${(props) => props.theme.colors.darkText};
+  @media (min-width: 800px) {
+    font-size: 4em;
+  }
 `;
 
 type AppProps = {

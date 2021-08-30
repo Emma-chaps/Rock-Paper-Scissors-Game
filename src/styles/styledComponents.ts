@@ -35,6 +35,10 @@ export const ExternalCircle = styled.div<CircleType>`
   background: ${(props: CircleType) => props.selectedOption.color};
   animation: ${(props: CircleType) => (props.rotate ? rotate : "none")} 1s
     backwards;
+  @media (min-width: 700px) {
+    height: 130px;
+    width: 130px;
+  }
 `;
 
 export const InternalCircle = styled.div`
@@ -45,9 +49,17 @@ export const InternalCircle = styled.div`
   margin: auto;
   vertical-align: middle;
   box-shadow: inset 0 5px 2px 2px rgb(0 0 0 / 25%);
+  @media (min-width: 700px) {
+    height: 100px;
+    width: 100px;
+  }
 `;
 
 export const Img = styled.img`
-  height: 2.7rem;
+  height: 40px;
   padding-top: 1.3rem;
+  @media (min-width: 700px) {
+    height: 50px;
+    padding-top: 1.6rem;
+  }
 `;

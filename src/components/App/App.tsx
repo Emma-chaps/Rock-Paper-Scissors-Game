@@ -7,10 +7,10 @@ import Rules from "../Rules";
 import { IARandomChoice, theWinnerIs } from "./../../hooks/utils";
 import { myTheme } from "./../../styles/myTheme";
 
-import "./App.css";
-
 const Wrapper = styled.div`
   padding: 1.5rem;
+  max-width: 1000px;
+  margin: 0 auto;
   background: ${(props) => props.theme.gradients.bodyBackground};
 `;
 
@@ -31,10 +31,10 @@ function App() {
     setIsUserWinning(userWin);
     sethasGameStarted(true);
     if (userWin) {
-      setCounter(counter + 1);
+      setTimeout(() => setCounter(counter + 1), 1000);
     } else {
       if (counter > 0) {
-        setCounter(counter - 1);
+        setTimeout(() => setCounter(counter - 1), 1000);
       }
     }
   };
