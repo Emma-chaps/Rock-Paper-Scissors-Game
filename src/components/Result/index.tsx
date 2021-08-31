@@ -12,6 +12,7 @@ const StyledResultWrapper = styled.div`
   text-align: center;
   margin: 2.6rem auto;
   min-height: 303px;
+
   @media (min-width: 700px) AND (min-height: 700px) {
     min-height: 350px;
     margin: 3.5rem auto 2.5rem;

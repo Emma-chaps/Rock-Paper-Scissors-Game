@@ -15,8 +15,6 @@ const Wrapper = styled.div`
   background: ${(props) => props.theme.gradients.bodyBackground};
 `;
 
-// const data = ["paper", "rock", "scissors"];
-
 function App() {
   const [userSelection, setUserSelection] = useState("");
   const [iaSelection, setIaSelection] = useState("");

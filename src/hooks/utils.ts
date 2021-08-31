@@ -5,7 +5,7 @@ export const IARandomChoice = (
   const newArray = array.filter(
     (item: { name: string; color: string }) => item.name !== element
   );
-  const result = newArray[Math.floor(Math.random() * newArray.length)];
+  const result = newArray[Math.floor(Math.random() * (newArray.length - 1))];
   return result.name;
 };
 
