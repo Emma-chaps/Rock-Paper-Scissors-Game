@@ -5,7 +5,7 @@ import {
   InternalCircle,
   Img,
 } from "./../../styles/styledComponents";
-import { findSelectionData } from "./../../hooks/utils";
+import { findSelectionData } from "../../selectors/utils";
 import data from "./../../data";
 
 const StyledResultWrapper = styled.div`

@@ -9,7 +9,7 @@ export const IARandomChoice = (
   return result.name;
 };
 
-export const theWinnerIs = (userSelection: string, iaSelection: string) => {
+export const theUserWin = (userSelection: string, iaSelection: string) => {
   if (userSelection === "rock") {
     if (iaSelection === "paper") {
       return false;

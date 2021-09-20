@@ -5,7 +5,7 @@ import ChooseOptions from "../ChooseOptions";
 import Header from "../Header";
 import Result from "../Result";
 import Rules from "../Rules";
-import { IARandomChoice, theWinnerIs } from "./../../hooks/utils";
+import { IARandomChoice, theUserWin } from "../../selectors/utils";
 import { myTheme } from "./../../styles/myTheme";
 
 const Wrapper = styled.div`
@@ -25,7 +25,7 @@ function App() {
   const startGame = (userChoice: string) => {
     setUserSelection(userChoice);
     const iaChoice = IARandomChoice(data, userChoice);
-    const userWin = theWinnerIs(userChoice, iaChoice);
+    const userWin = theUserWin(userChoice, iaChoice);
     setIaSelection(iaChoice);
     setIsUserWinning(userWin);
     sethasGameStarted(true);
